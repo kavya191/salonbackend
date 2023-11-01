@@ -1,4 +1,3 @@
-
 const enquires=require('../Models/Collection')
 const userEnquiry=async(req,res)=>{
     //destructure data
