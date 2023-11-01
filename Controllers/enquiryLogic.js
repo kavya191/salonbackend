@@ -1,10 +1,10 @@
-//const enquires=require('../Models/Collection')
+
 const enquires=require('../Models/Collection')
 const userEnquiry=async(req,res)=>{
     //destructure data
     const {username,email,service,message}=req.body
     let enquiry={username,email,service,message}
-   // try{
+    try{
         await enquires.create(enquiry).then((result,error)=>{
         
             if(result != "null" && result != ""){
@@ -12,9 +12,9 @@ const userEnquiry=async(req,res)=>{
             }else
             res.send("error")
         })
-    // }catch{
-    //     res.send("connection error")
-    // }
+    }catch{
+        res.send("connection error")
+    }
  
 
 }
